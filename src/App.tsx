@@ -23,7 +23,7 @@ function App() {
     // Load from localStorage on initial render
     const saved = localStorage.getItem('teleprompter-markdown');
     return saved || defaultMarkdown;
-  });  const [html, setHtml] = useState('');
+  }); const [html, setHtml] = useState('');
   const [isFlipped, setIsFlipped] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [fontSize, setFontSize] = useState(90);
