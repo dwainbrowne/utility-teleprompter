@@ -3,21 +3,9 @@ import { marked } from 'marked';
 import { RotateCcw, FileText, ChevronLeft, ChevronRight, Type, Plus, Minus, Play, SkipBack, Moon, Sun, Square } from 'lucide-react';
 
 function App() {
-  const defaultMarkdown = `# Intro (keep it tight)
-- Your DB bill is creeping up because every read hits the database.  
-- Today I'll show how Cloudflare KV + Hono + SWR slashes reads, cuts p95, and keeps data "fresh enough."  
-- I'll also call out where KV doesn't fit so you don't ship stale lies or break critical flows.
+  const defaultMarkdown = `# Your Teleprompter Script
 
-## What You'll Learn
-- The cache-aside + SWR flow (KV hit → serve; stale → serve + \`waitUntil()\` refresh; hard-expire → hit DB).  
-- Soft vs hard TTLs you can actually use, and simple key versioning.  
-- Minimal Hono setup (KV binding, key design per tenant/type/id).  
-- Safe invalidation basics and an emergency cache-bypass switch.  
-- When **not** to use KV (payments, counters, strict consistency) and what to use instead.
-
-## Standard Intro (drop-in)
-- "Hey, I'm **Dwain Browne** from Toronto—software dev turned entrepreneur. I test **Cloudflare, Azure/.NET, and AI** to build faster, leaner SaaS—sharing what works and what doesn't."  
-- "If you're a founder or technical builder, **subscribe**. Want help with automation or scaling? **Book a free strategy session:** https://dwain.me/meet. Check out **https://snapsuite.io** and **https://getleadscore.ai**."`;
+Start typing your script here...`;
 
   const [markdown, setMarkdown] = useState(() => {
     // Load from localStorage on initial render
