@@ -103,6 +103,16 @@
   @apply text-blue-400 hover:text-blue-300;
 }
 
+/* Hide scrollbar while maintaining scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
 /* Teleprompter-specific enhancements */
 .prose ul li {
   @apply mb-1;

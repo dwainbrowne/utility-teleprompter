@@ -284,7 +284,7 @@ function App() {
         } ${isDarkMode ? 'bg-black' : 'bg-white'}`}>
           <div 
             ref={scrollContainerRef}
-            className="flex-1 overflow-y-auto overflow-x-hidden"
+            className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide"
             style={{ maxHeight: 'calc(100vh - 100px)' }}
           >
             <div 
@@ -306,14 +306,6 @@ function App() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className={`border-t px-6 py-3 ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
-        <div className={`flex items-center justify-between text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-          <span>Use Play/Pause to control auto-scroll • Adjust speed with +/- • Reset to top with skip back button</span>
-          <span>Live preview • Auto-scroll teleprompter • Serif font optimized</span>
-        </div>
-      </footer>
     </div>
   );
 }
