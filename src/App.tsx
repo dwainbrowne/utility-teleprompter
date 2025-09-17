@@ -25,7 +25,7 @@ function App() {
   const [fontSize, setFontSize] = useState(90);
   const [fontFamily, setFontFamily] = useState('Helvetica');
   const [isScrolling, setIsScrolling] = useState(false);
-  const [scrollSpeed, setScrollSpeed] = useState(0.5);
+  const [scrollSpeed, setScrollSpeed] = useState(0.05);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -148,15 +148,15 @@ function App() {
                 </button>
                 <div className="flex items-center space-x-1">
                   <button
-                    onClick={() => setScrollSpeed(Math.max(0.5, scrollSpeed - 0.5))}
+                    onClick={() => setScrollSpeed(Math.max(0.05, scrollSpeed - 0.05))}
                     className={`p-1 rounded transition-colors ${isDarkMode ? 'hover:bg-gray-600' : 'hover:bg-gray-200'}`}
                     title="Slower"
                   >
                     <Minus className="h-3 w-3" />
                   </button>
-                  <span className={`text-xs min-w-[2.5rem] text-center ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>{scrollSpeed}x</span>
+                  <span className={`text-xs min-w-[2.5rem] text-center ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>{scrollSpeed.toFixed(2)}x</span>
                   <button
-                    onClick={() => setScrollSpeed(Math.min(5, scrollSpeed + 0.5))}
+                    onClick={() => setScrollSpeed(Math.min(3, scrollSpeed + 0.05))}
                     className={`p-1 rounded transition-colors ${isDarkMode ? 'hover:bg-gray-600' : 'hover:bg-gray-200'}`}
                     title="Faster"
                   >
