@@ -25,7 +25,7 @@ function App() {
   const [fontSize, setFontSize] = useState(90);
   const [fontFamily, setFontFamily] = useState('Helvetica');
   const [isScrolling, setIsScrolling] = useState(false);
-  const [scrollSpeed, setScrollSpeed] = useState(1);
+  const [scrollSpeed, setScrollSpeed] = useState(0.5);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -57,7 +57,7 @@ function App() {
         if (scrollContainerRef.current) {
           const currentScrollTop = scrollContainerRef.current.scrollTop;
           scrollContainerRef.current.scrollBy({
-            top: scrollSpeed * 0.5, // Much slower: 0.5x multiplier instead of 5x
+            top: scrollSpeed * 1, // Increased from 0.25 to 1 to make it more visible
             behavior: 'auto'
           });
           console.log('Scrolling...', currentScrollTop, 'to', scrollContainerRef.current.scrollTop); // Debug log
